@@ -10,7 +10,7 @@ const handleDuplicateKeyError = (err) => {
 
 const handleValidationError = (err) => {
     const messages = Object.values(err.errors).map((e) => e.message);
-    return new AppError(`Validation failed: ${message.join(", ")}`, 400);
+    return new AppError(`Validation failed: ${messages.join(", ")}`, 400);
 };
 
 const handleJWTError = () => new AppError("Invalid token. Please login again", 401);
